@@ -7,23 +7,7 @@
 ## Install
 
 ```bash
-npm install --save react-notifications-toast
-```
-
-## Usage
-
-```tsx
-import * as React from 'react'
-
-import MyComponent from 'react-notifications-toast'
-
-class Example extends React.Component {
-  render () {
-    return (
-      <MyComponent />
-    )
-  }
-}
+npm install react-notifications-toast
 ```
 
 ## License
