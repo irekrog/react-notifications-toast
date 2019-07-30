@@ -5,12 +5,7 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { NotificationWrapper } from "./containers/NotificationWrapper";
-import { createGlobalStyle } from "styled-components";
 import { IAttributes } from "./models/props";
-
-const GlobalStyle = createGlobalStyle`
-   @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-`;
 
 export default class NotificationsToast extends React.Component<IAttributes> {
   private el: HTMLElement;
@@ -39,7 +34,6 @@ export default class NotificationsToast extends React.Component<IAttributes> {
 
     return ReactDOM.createPortal(
       <React.Fragment>
-        <GlobalStyle />
         <NotificationWrapper
           type={type}
           message={message}
