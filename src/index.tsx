@@ -13,28 +13,24 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export default class NotificationsToast extends React.Component<IAttributes> {
-  private readonly el: HTMLElement;
+  private el: HTMLElement;
   private root: HTMLElement | null;
 
   constructor(props: any) {
     super(props);
 
     this.el = document.createElement("div");
+    this.el.classList.add('react-notifications-toast-container')
   }
   componentDidMount(): void {
     this.root = document.body;
     this.root.appendChild(this.el);
   }
 
-  componentWillUnmount() {
-    if (this.root) {
-      this.root.removeChild(this.el);
-    }
-  }
-
   removeNotification = (): void => {
     if (this.root) {
-      this.root.removeChild(this.el);
+      const selectors = document.querySelectorAll('.react-notifications-toast-container');
+      Array.from(selectors).forEach((item: any) => item.remove());
     }
   };
 

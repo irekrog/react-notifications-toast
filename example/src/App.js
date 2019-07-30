@@ -6,21 +6,18 @@ export default class App extends Component {
   state = {
     isError: false
   };
-  componentDidMount() {
-    this.fakeGetData();
-  }
 
   fakeGetData = () => {
-    setTimeout(() => {
-      try {
-        throw new Error("Error");
-      } catch (e) {
-        this.setState({
-          isError: true
-        });
-      }
-    }, 1500);
+    this.setState({
+      isError: true
+    });
   };
+
+  resetState = () => {
+    this.setState({
+      isError: false
+    })
+  }
 
   render() {
     return (
@@ -29,12 +26,14 @@ export default class App extends Component {
           <NotificationsToast
             type="error"
             message="test"
-            positionFrom="left"
+            positionFrom="right"
             settings={{
               root: "root"
             }}
           />
         )}
+        <button onClick={this.fakeGetData}>Test</button>
+        <button onClick={this.resetState}>Reset</button>
       </Fragment>
     );
   }

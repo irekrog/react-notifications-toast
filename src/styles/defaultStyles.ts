@@ -10,4 +10,5 @@ export const defaultStyles = `
   position: fixed;
   box-sizing: border-box;
   cursor: pointer;
+  top: 0;
 `;
